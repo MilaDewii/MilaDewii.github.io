@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mila Dewi Nurhidayah | Frontend Developer & UI/UX Designer</title>
+<meta name="description" content="Portofolio Mila Dewi Nurhidayah, frontend developer dan UI/UX designer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F7FD;--panel:#fff;--ink:#0E2247;--muted:#55647F;--line:#D6E0EE;--brand:#1B4FA8;--safe:#0E9F86;--gold:#E8A317;--soft:#E3ECF9;--shadow:0 14px 34px -20px rgba(14,34,71,.45);
+--head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Figtree','Segoe UI',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1326;--panel:#101C36;--ink:#E8EFFB;--muted:#9DABC6;--line:#22335A;--brand:#7FA8F5;--safe:#3CD3B5;--gold:#F5BE4B;--soft:#15254A;--shadow:0 14px 34px -20px #000}}
+:root[data-theme="dark"]{--bg:#0A1326;--panel:#101C36;--ink:#E8EFFB;--muted:#9DABC6;--line:#22335A;--brand:#7FA8F5;--safe:#3CD3B5;--gold:#F5BE4B;--soft:#15254A;--shadow:0 14px 34px -20px #000}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+h1{font-size:clamp(2.5rem,5.6vw,4.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:34px}
+h2::after{content:"";display:block;width:64px;height:5px;border-radius:9px;background:linear-gradient(90deg,var(--brand),var(--safe));margin-top:12px}
+h3{font-size:1.25rem}
+.band{background:radial-gradient(circle at 88% 8%,rgba(27,79,168,.22),transparent 42%),radial-gradient(circle at 4% 95%,rgba(14,159,134,.20),transparent 40%)}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+header.top nav{display:flex;gap:22px;align-items:center}
+header.top a{color:var(--ink);text-decoration:none;font-weight:500}
+header.top a:hover{color:var(--brand)}
+.logo{font:700 1.25rem var(--head)}
+#theme{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 14px;font:500 .9rem var(--body);cursor:pointer}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:36px 0 84px}
+.hero .hi{display:inline-block;background:var(--soft);border-radius:999px;padding:6px 16px;font-weight:600;margin-bottom:18px}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:33em;margin:22px 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;border:1.5px solid var(--brand)}
+.btn.primary{background:var(--brand);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0A1326}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#0A1326}}
+.btn.ghost{color:var(--brand);background:var(--panel)}
+/* gambar + placeholder */
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--soft),var(--panel));display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:.9rem;padding:12px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo{aspect-ratio:4/5;border-radius:999px 999px 28px 28px;box-shadow:var(--shadow);border:6px solid var(--panel);max-width:380px;margin-left:auto;width:100%}
+section{padding:76px 0}
+section.alt{background:var(--panel);border-block:1px solid var(--line)}
+.grid{display:grid;gap:26px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+section.alt .card{background:var(--bg)}
+.card .ph{aspect-ratio:16/10}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card p{margin:0;color:var(--muted)}
+.card .meta{color:var(--muted);font-size:.92rem;font-weight:500}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{font-size:.82rem;background:var(--soft);border-radius:999px;padding:3px 11px;font-weight:500}
+.links{display:flex;gap:16px;font-weight:600;margin-top:auto;padding-top:6px}
+.award{border-top:5px solid var(--gold)}
+.award .ph{aspect-ratio:4/3}
+.cert .ph{aspect-ratio:4/3}
+.cert{border-top:5px solid var(--safe)}
+.medal{display:inline-block;background:var(--gold);color:#3A2600;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700;align-self:flex-start}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.skill{background:var(--bg);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:14px;padding:18px 20px}
+.skill:nth-child(2){border-left-color:var(--safe)}.skill:nth-child(3){border-left-color:var(--gold)}.skill:nth-child(4){border-left-color:#8A63D2}
+.skill h3{font-size:1.05rem;margin-bottom:6px}.skill p{margin:0;color:var(--muted)}
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{padding:14px 0;border-bottom:1px solid var(--line)}
+ul.plain li:first-child{border-top:1px solid var(--line)}
+.contact{text-align:center}
+.contact h2::after{margin-inline:auto}
+.contact p{max-width:34em;margin:0 auto;color:var(--muted)}
+.contact ul{list-style:none;padding:0;margin:26px 0 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact a{display:inline-block;padding:10px 20px;border-radius:999px;border:1.5px solid var(--brand);text-decoration:none;font-weight:600;background:var(--panel)}
+footer{padding:34px 0 52px;color:var(--muted);text-align:center;font-size:.95rem}
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.about p{margin:0 0 14px;color:var(--muted);font-size:1.12rem}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips span{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--safe);border-radius:12px;padding:10px 16px;font-weight:600}
+.job{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
+.job .role{color:var(--brand);font-weight:700}
+.dur{display:inline-block;background:var(--gold);color:#3A2600;border-radius:999px;padding:3px 14px;font-size:.88rem;font-weight:700;margin:6px 0 14px}
+.job ul,.kontrib{margin:10px 0 14px;padding-left:20px;color:var(--muted)}
+.job li,.kontrib li{margin:6px 0}
+.kontrib{font-size:.96rem;margin:0}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.shots .ph{aspect-ratio:16/10;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.shots .ph:first-child{grid-column:1/-1}
+.card .body{padding:16px 20px 20px;gap:8px;font-size:.95rem;line-height:1.5}
+.card h3{font-size:1.15rem}
+.card p{font-size:.95rem}
+.card .meta{font-size:.85rem}
+.card p.meta{font-weight:700;color:var(--ink);margin-top:2px}
+.kontrib{font-size:.92rem;padding-left:18px}
+.kontrib li{margin:3px 0}
+@media (max-width:860px){.about,.job{grid-template-columns:1fr}.hero{grid-template-columns:1fr;gap:34px}.photo{margin:0 auto}.g2,.g3{grid-template-columns:1fr}header.top nav a.hide-sm{display:none}}
+@media (min-width:861px) and (max-width:1000px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="band">
+<div class="wrap">
+  <header class="top">
+    <div class="logo">Mila Dewi</div>
+    <nav aria-label="Navigasi utama">
+      <a class="hide-sm" href="#magang">Magang</a>
+      <a class="hide-sm" href="#proyek">Proyek</a>
+      <a class="hide-sm" href="#penghargaan">Penghargaan</a>
+      <a class="hide-sm" href="#sertifikat">Sertifikat</a>
+      <a class="hide-sm" href="#skill">Skill</a>
+      <a href="#kontak">Kontak</a>
+      <button id="theme" type="button" aria-label="Ganti tema terang atau gelap">Tema</button>
+    </nav>
+  </header>
+  <div class="hero">
+    <div>
+      <span class="hi">Halo, aku Mila</span>
+      <h1>Mila Dewi Nurhidayah</h1>
+      <p class="lead">Frontend developer dan UI/UX designer. Aku merancang antarmuka di Figma, membangunnya dengan React, Next.js, dan Flutter, lalu menyambungkannya ke backend dan perangkat IoT.</p>
+      <div class="btns">
+        <a class="btn primary" href="#proyek">Lihat proyek</a>
+        <!-- GANTI: link CV (Google Drive atau file PDF di repo) -->
+        <a class="btn ghost" href="#" data-isi>Unduh CV</a>
+      </div>
+    </div>
+    <!-- FOTO: simpan sebagai img/foto.jpg -->
+    <div class="ph photo"><span>Taruh fotomu di<br>img/foto.jpg</span><img src="img/foto.jpg" alt="Foto Mila Dewi Nurhidayah" onerror="this.remove()"></div>
+  </div>
+</div>
+</div>
+
+<main>
+<section id="tentang-saya">
+  <div class="wrap">
+    <h2>Tentang saya</h2>
+    <div class="about">
+      <div>
+        <p>Lulusan D3 Teknik Informatika Politeknik Negeri Semarang (IPK 3,84, cumlaude) dengan minat besar di pengembangan web dan mobile, desain UI/UX, dan jaringan komputer.</p>
+        <p>Aku terbiasa bekerja dalam tim maupun mandiri, dari merancang antarmuka sampai menyambungkannya ke backend dan database. Sekarang aku siap berkontribusi langsung sebagai frontend developer atau UI/UX designer.</p>
+      </div>
+      <div class="chips"><span>Frontend Developer</span><span>UI/UX Designer</span><span>Mobile (Flutter)</span><span>IoT dan jaringan</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="magang" class="alt">
+  <div class="wrap">
+    <h2>Pengalaman magang</h2>
+    <div class="job">
+      <div>
+        <h3>Full-Stack Developer, POSMind (Restaurant POS)</h3>
+        <p class="role">PT Data Andalan Utama, Semarang</p>
+        <span class="dur">Agu – Des 2025 · 5 bulan</span>
+        <ul>
+          <li>Merancang UI/UX dan membangun website POS restoran dari tahap desain sampai fitur berjalan.</li>
+          <li>Membangun dashboard kasir dan admin dengan fitur booking meja, open/close shift, dan pengelolaan operasional restoran.</li>
+          <li>Mengintegrasikan frontend, backend, dan database agar alur data berjalan end-to-end.</li>
+          <li>[tambahkan hasil nyata, mis. jumlah fitur, halaman, atau pengguna]</li>
+        </ul>
+        <div class="tags"><span>Next.js</span><span>React</span><span>Supabase</span><span>PostgreSQL</span><span>UI/UX</span></div>
+        <div class="links"><a href="#" data-isi>Demo POSMind</a><a href="#" data-isi>Desain Figma</a></div>
+      </div>
+      <!-- GAMBAR: img/posmind-kasir.jpg, img/posmind-admin.jpg, img/posmind-booking.jpg -->
+      <div class="shots">
+        <div class="ph"><span>img/posmind-kasir.jpg</span><img src="img/posmind-kasir.jpg" alt="Dashboard kasir POSMind" onerror="this.remove()"></div>
+        <div class="ph"><span>img/posmind-admin.jpg</span><img src="img/posmind-admin.jpg" alt="Dashboard admin POSMind" onerror="this.remove()"></div>
+        <div class="ph"><span>img/posmind-booking.jpg</span><img src="img/posmind-booking.jpg" alt="Fitur booking meja POSMind" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyek">
+  <div class="wrap">
+    <h2>Proyek</h2>
+    <div class="grid g3">
+      <!-- GANTI gambar: img/guardianwalk.jpg, img/arena-connect.jpg, img/tunetic.jpg -->
+      <article class="card">
+        <div class="ph"><span>img/guardianwalk.jpg</span><img src="img/guardianwalk.jpg" alt="Tampilan proyek GuardianWalk" onerror="this.remove()"></div>
+        <div class="body">
+          <span class="meta">Jun – Agu 2026</span>
+          <h3>GuardianWalk, smart walker IoT</h3>
+          <p>Smart walker ESP32 untuk memantau lansia. Gold Medal IIIEX 2026 dan Juara 1 KMIPN VIII 2026.</p>
+          <p class="meta">Kontribusi saya</p><ul class="kontrib"><li>Merancang alat dan cara kerja sistem smart walker.</li><li>Mendesain UI/UX aplikasi monitoring.</li><li>Mengimplementasikan firmware ESP32 dan fitur: lokasi, aktivitas, deteksi jatuh, obstacle, geofencing.</li><li>Membangun aplikasi Flutter sampai siap dipakai dan terhubung dengan Firebase dan alat.</li></ul>
+          <div class="tags"><span>ESP32</span><span>Flutter</span><span>IoT</span></div>
+          <div class="links"><a href="#" data-isi>Demo</a><a href="#" data-isi>Desain Figma</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph"><span>img/arena-connect.jpg</span><img src="img/arena-connect.jpg" alt="Tampilan aplikasi Arena Connect" onerror="this.remove()"></div>
+        <div class="body">
+          <span class="meta">Okt 2024 – Jan 2025</span>
+          <h3>Arena Connect, aplikasi sewa lapangan</h3>
+          <p>Aplikasi sewa lapangan berbasis Flutter untuk pemilik lapangan dan pemain.</p>
+          <p class="meta">Kontribusi saya</p><ul class="kontrib"><li>Mendesain UI/UX halaman register dan login.</li><li>Membuat halaman list sparring, rating, detail booking, dan poster promosi.</li></ul>
+          <div class="tags"><span>Flutter</span><span>UI/UX</span></div>
+          <div class="links"><a href="#" data-isi>Kode</a><a href="#" data-isi>Desain</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph"><span>img/tunetic.jpg</span><img src="img/tunetic.jpg" alt="Tampilan website Tunetic" onerror="this.remove()"></div>
+        <div class="body">
+          <span class="meta">Mar – Jun 2025</span>
+          <h3>Tunetic, pelaporan sampah 3R</h3>
+          <p>Sistem manajemen dan pelaporan sampah 3R dengan pemantauan armada real-time.</p>
+          <p class="meta">Kontribusi saya</p><ul class="kontrib"><li>Mendesain UI/UX web admin pusat.</li><li>Membangun CRUD petugas, volume sampah, dan user.</li><li>Verifikasi email dan approval admin untuk petugas.</li></ul>
+          <div class="tags"><span>PHP</span><span>MySQL</span></div>
+          <div class="links"><a href="#" data-isi>Kode</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="penghargaan" class="alt">
+  <div class="wrap">
+    <h2>Penghargaan</h2>
+    <div class="grid g2">
+      <article class="card award">
+        <div class="ph"><span>img/iiiex.jpg</span><img src="img/iiiex.jpg" alt="Dokumentasi Gold Medal IIIEX 2026" onerror="this.remove()"></div>
+        <div class="body"><span class="medal">Gold Medal</span><h3>International Indonesia Invention Expo (IIIEX) 2026</h3><p>Lewat GuardianWalk, kategori IoT dan smart walker.</p></div>
+      </article>
+      <article class="card award">
+        <div class="ph"><span>img/kmipn.jpg</span><img src="img/kmipn.jpg" alt="Dokumentasi Juara 1 KMIPN VIII 2026" onerror="this.remove()"></div>
+        <div class="body"><span class="medal">Juara 1</span><h3>KMIPN VIII 2026, Creativity & Solution</h3><p>Kategori Internet of Things.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sertifikat">
+  <div class="wrap">
+    <h2>Sertifikat pelatihan</h2>
+    <div class="grid g3">
+      <article class="card cert">
+        <div class="ph"><span>img/mtcna.jpg</span><img src="img/mtcna.jpg" alt="Sertifikat MikroTik MTCNA" onerror="this.remove()"></div>
+        <div class="body"><h3>MikroTik Certified Network Associate</h3><p class="meta">MikroTik, 2024</p></div>
+      </article>
+      <article class="card cert">
+        <div class="ph"><span>img/oracle-sql.jpg</span><img src="img/oracle-sql.jpg" alt="Sertifikat Database Programming with SQL" onerror="this.remove()"></div>
+        <div class="body"><h3>Database Programming with SQL</h3><p class="meta">Oracle Academy, 2024</p></div>
+      </article>
+      <article class="card cert">
+        <div class="ph"><span>img/oracle-design.jpg</span><img src="img/oracle-design.jpg" alt="Sertifikat Database Design" onerror="this.remove()"></div>
+        <div class="body"><h3>Database Design</h3><p class="meta">Oracle Academy, 2024</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skill" class="alt">
+  <div class="wrap">
+    <h2>Skill</h2>
+    <div class="skills">
+      <div class="skill"><h3>Frontend dan mobile</h3><p>React.js, Next.js, Flutter</p></div>
+      <div class="skill"><h3>UI/UX</h3><p>Figma, desain antarmuka dari wireframe sampai prototipe</p></div>
+      <div class="skill"><h3>Integrasi backend</h3><p>Supabase, PostgreSQL, MySQL, Firebase, PHP, Laravel</p></div>
+      <div class="skill"><h3>IoT dan jaringan</h3><p>ESP32, MikroTik, Cisco Packet Tracer</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tentang">
+  <div class="wrap">
+    <h2>Pendidikan dan organisasi</h2>
+    <ul class="plain">
+      <li><strong>Politeknik Negeri Semarang</strong>, D3 Teknik Informatika, 2023 – 2026. IPK 3,84 (cumlaude).</li>
+      <li><strong>Polytechnic Computer Club (PCC)</strong>, staf Departemen Network. Pemateri Training Basic 2024: dasar jaringan dan routing statis dengan Cisco Packet Tracer.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="kontak" class="contact alt">
+  <div class="wrap">
+    <h2>Ayo ngobrol</h2>
+    <p>Aku sedang mencari posisi frontend developer atau UI/UX designer. Kirim email atau hubungi lewat kanal di bawah.</p>
+    <ul>
+      <li><a href="mailto:milanrhd13@gmail.com">Email</a></li>
+      <li><a href="https://wa.me/6285119483916">WhatsApp</a></li>
+      <li><a href="#" data-isi>LinkedIn</a></li>
+      <li><a href="https://instagram.com/milaadewi__">Instagram</a></li>
+      <li><a href="#" data-isi>GitHub</a></li>
+      <li><a href="#" data-isi>Figma</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer>© 2026 Mila Dewi Nurhidayah. Grobogan, Jawa Tengah.</footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+    var n=dark?'light':'dark';r.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
